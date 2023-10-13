@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'p53',
 ]
 
 MIDDLEWARE = [
@@ -59,10 +60,12 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'mysite.urls'
 
+TEMPLATES_DIR = os.path.join(BASE_DIR, 'p53','templates')
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [TEMPLATES_DIR,],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -135,3 +138,5 @@ STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CSRF_TRUSTED_ORIGINS = ['https://django-server-production-9b6c8.up.railway.app']

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Posts for {{ year }}/{{ week }}</title>
+</head>
+<body>
+    <h1>Posts for {{ year }}/{{ week }}</h1>
+    <ul>
+        {% for post in posts %}
+            <li>{{ post.game_id }}</li>
+            <p>{{ post.predicted_spread }}</p>
+        {% empty %}
+            <p>No posts available for this month.</p>
+        {% endfor %}
+    </ul>
+</body>
+</html>
